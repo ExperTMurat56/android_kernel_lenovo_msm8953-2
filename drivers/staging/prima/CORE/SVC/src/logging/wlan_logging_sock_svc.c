@@ -1479,7 +1479,7 @@ int wlan_logging_sock_activate_svc(int log_fe_to_console, int num_buf,
 	bool failure = FALSE;
 	struct log_msg *temp;
 
-	pr_info("%s: Initalizing FEConsoleLog = %d NumBuff = %d\n",
+	pr_debug("%s: Initalizing FEConsoleLog = %d NumBuff = %d\n",
 			__func__, log_fe_to_console, num_buf);
 
 	gapp_pid = INVALID_PID;
@@ -1510,7 +1510,7 @@ int wlan_logging_sock_activate_svc(int log_fe_to_console, int num_buf,
 	spin_unlock_irqrestore(&gwlan_logging.spin_lock, irq_flag);
 	if(pkt_stats_enabled)
 	{
-		pr_info("%s: Initalizing Pkt stats pkt_stats_buff = %d\n",
+		pr_debug("%s: Initalizing Pkt stats pkt_stats_buff = %d\n",
 			__func__, pkt_stats_buff);
 		pkt_stats_buffers = (struct pkt_stats_msg *) vos_mem_malloc(
 			 pkt_stats_buff * sizeof(struct pkt_stats_msg));
