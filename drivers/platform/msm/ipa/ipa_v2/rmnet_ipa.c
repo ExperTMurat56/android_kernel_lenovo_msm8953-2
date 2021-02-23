@@ -1547,7 +1547,7 @@ static int ipa_wwan_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
 
 			if ((extend_ioctl_data.u.data) &
 					RMNET_IOCTL_INGRESS_FORMAT_AGG_DATA) {
-				IPAWANERR("get AGG size %d count %d\n",
+				IPAWANDBG("get AGG size %d count %d\n",
 					extend_ioctl_data.u.
 					ingress_format.agg_size,
 					extend_ioctl_data.u.
@@ -1606,7 +1606,7 @@ static int ipa_wwan_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
 				&ipa_to_apps_ep_cfg, &ipa_to_apps_hdl);
 			mutex_unlock(&ipa_to_apps_pipe_handle_guard);
 			if (rc)
-				IPAWANERR("failed to configure ingress\n");
+				IPAWANDBG("failed to configure ingress\n");
 			break;
 		case RMNET_IOCTL_SET_XLAT_DEV_INFO:
 			wan_msg = kzalloc(sizeof(struct ipa_wan_msg),
